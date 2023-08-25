@@ -1,22 +1,19 @@
-.Header{
-    display: flex;
-    width: 1299.25px;
-    align-items: center;
-    gap: 251px;
-}
-.Header-Icon{
-display: flex;
-width: 306.25px;
-align-items: center;
-gap: 33px;
-flex-shrink: 0;
-}
-.Header-Logo-Text{
-    color: #FFF;
-    font-family: Inter;
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 125%; /* 35px */
-    color:#FFFFFF;
-}
+.app {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .movie {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
