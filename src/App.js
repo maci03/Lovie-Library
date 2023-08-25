@@ -4,9 +4,18 @@ import MovieList from './Components/MovieList';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
+  const [title, setTitle] = useState('');
+  const [year, setYear] = useState('');
+
+  const addMovie = () =>{
+    if(title && year){
+      setMovies([...movies, {title, year}]);
+      setTitle('');
+      setYear('');
+    }
+  }
 
   useEffect(() => {
-    // Fetch movie data from an API (replace with a real API endpoint)
     fetch('https://api.example.com/movies')
       .then(response => response.json())
       .then(data => setMovies(data))
@@ -16,6 +25,21 @@ const App = () => {
   return (
     <div className="app">
       <h1>Movie Library</h1>
+    <div>
+        <input
+        type='text'
+        placeholder='movie title'
+        value={title}
+        onChange={e => setTitle(e.target.value)}/>
+
+        <input
+        type='text'
+        placeholder='Release year'
+        value={year}
+        onChange={e => setYear(e.target.value)} />
+
+        <button onClick={addMovie}>Add Movie</button>
+      </div>
       <MovieList movies={movies} />
     </div>
   );
